@@ -3,7 +3,7 @@ module delay(clk, N, trigger, time_out);
 	parameter BIT_SZ = 14;
 
 	input clk, trigger;
-	input [BIT_SZ-1:0] N;
+	input [5:0] N;
 	output time_out;
 
 	reg[BIT_SZ-1:0] count;
@@ -21,7 +21,7 @@ module delay(clk, N, trigger, time_out);
 		case(state)
 			IDLE: if(trigger == 1'b1)
 				begin
-					count <= N*128;
+					count <= N*250;
 					state <= COUNTING;
 				end
 			COUNTING: 
