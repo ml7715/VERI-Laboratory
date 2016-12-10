@@ -1,6 +1,6 @@
-module formula_fsm(clk, tick, trigger, time_out, en_lfsr, start_delay, ledr);
+module formula_fsm(clk, trigger, time_out, en_lfsr, start_delay, ledr);
 
-input clk, tick, trigger, time_out;
+input clk, trigger, time_out;
 output en_lfsr, start_delay;
 output [9:0] ledr;
 
