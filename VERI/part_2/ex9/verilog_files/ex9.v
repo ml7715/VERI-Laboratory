@@ -6,7 +6,7 @@ module ex9(CLOCK_50, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, LEDR);
 	output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;
 	
 	wire tick_ms, tick_hs, time_out, start_delay, en_lfsr;
-	wire [6:0] N;
+	wire [5:0] N;
 	wire [6:0] bcd_to_hex;
 	wire [3:0] BCD_0, BCD_1, BCD_2, BCD_3, BCD_4;
 	wire [15:0] count_out;
