@@ -11,8 +11,7 @@ module ex8(CLOCK_50, KEY, HEX0, HEX1, HEX2, LEDR);
 	wire[3:0] BCD_0, BCD_1, BCD_2, BCD_3, BCD_4;
 	
 	tick_50000 TICK0(CLOCK_50, tick_ms);
-	tick_2500 TICK1(CLOCK_50, tick_ms, tick_hs);
-	formula_fsm FSM(tick_ms, tick_hs, ~KEY[3], time_out, en_lfsr, start_delay, LEDR);
+	formula_fsm FSM(tick_ms, ~KEY[3], time_out, en_lfsr, start_delay, LEDR);
 	LFSR LFSR0(tick_ms, en_lfsr, N);
 	delay DEL0(tick_ms, N, start_delay, time_out);
 	bin2bcd_16 BCD(N, BCD_0, BCD_1, BCD_2, BCD_3, BCD_4);
